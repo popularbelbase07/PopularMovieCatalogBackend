@@ -10,20 +10,22 @@ namespace PopularMovieCatalogBackend.Controllers
     public class GenresController : ControllerBase
     {
         private readonly ILogger<GenresController> logger;
+        private readonly ApplicationDbContext context;
 
-        public GenresController(ILogger<GenresController> logger)
+        public GenresController(ILogger<GenresController> logger , ApplicationDbContext context)
         {
             this.logger = logger;
+            this.context = context;
         }
 
 
 
         // GET: api/<GenresController>
         [HttpGet]
-        public IEnumerable<Genre> Get()
+        public async Task<ActionResult<IEnumerable<Genre>>> Get()
         {
             logger.LogInformation("Getting all genres");
-          return new List<Genre>() { new Genre() { Id = 1, Name = "Comedy" } };
+            return await context.Genres.getListAsync();
         }
 
         // GET api/<GenresController>/5
@@ -35,9 +37,11 @@ namespace PopularMovieCatalogBackend.Controllers
 
         // POST api/<GenresController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult> Post([FromBody] Genre genre)
         {
-            throw new NotImplementedException();
+           context.Genres.Add(genre);
+            await context.SaveChangesAsync(); 
+            return Ok();
         }
 
         // PUT api/<GenresController>/5
