@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "nlVNFyqmtVj5n9TIeGfT9ZEcrBckQHIp7YGkDMeKYcVnXbDjC/LHJCGBk3jkwHOQshpnQ8Xm2Sg1L5PKFLLswg==",
+  "dgSpecHash": "NkddVVizqeyx1+nzBSZFMovo0g9LCocuGe2GfqWQlUYNpht/w4pRgF4V18TtyOAU3OKZ4cwpIaqr1mj/cy/emg==",
   "success": true,
   "projectFilePath": "C:\\Users\\popul\\source\\Dissertation Project\\PopularMovieCatalogBackend\\PopularMovieCatalogBackend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\popul\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\popul\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\popul\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\popul\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",

@@ -29,7 +29,10 @@ namespace PopularMovieCatalogBackend
            // services.AddAuthentication(JwtBearerDefaults.AuthenticateScheme).AddJwtBearer();
 
             // Action filter is added
-            services.AddTransient<MyExceptionFilter>(); 
+            services.AddTransient<MyExceptionFilter>();
+
+            // Automapper for the database entities mapping with DTOS
+            services.AddAutoMapper(typeof(Startup));
 
             // Add services to the container.
             services.AddControllers();
