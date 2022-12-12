@@ -1,0 +1,61 @@
+﻿using PopularMovieCatalogBackend.Filter;
+
+namespace PopularMovieCatalogBackend
+{
+    public class Startup
+    {
+        public IConfiguration Configuration { get; set; }
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            //Custom Excepcion Filters
+            services.AddControllers(option =>
+            {
+                option.Filters.Add(typeof(MyExceptionFilter));
+            });
+
+            //Jwt Authentication
+           // services.AddAuthentication(JwtBearerDefaults.AuthenticateScheme).AddJwtBearer();
+
+            // Action filter is added
+            services.AddTransient<MyExceptionFilter>(); 
+
+            // Add services to the container.
+            services.AddControllers();
+            services.AddSwaggerGen( c =>
+            {
+                c.SwaggerDoc("v1", new() { Title = " PopularMovieCatalogBackend", Version = "v1" });
+            });
+
+        }
+
+        public void Configure(IApplicationBuilder app,  IWebHostEnvironment env, ILogger<Startup> logger)
+        {
+            // Configure the HTTP request pipeline.
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI( c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PopularMovieCatalogBackend v1"));
+            }
+
+            app.UseHttpsRedirection();
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseAuthentication();    
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+
+            app.UseAuthorization();
+
+        }
+
+    }
+}
