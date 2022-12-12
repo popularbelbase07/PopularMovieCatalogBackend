@@ -1,4 +1,5 @@
-﻿using PopularMovieCatalogBackend.Filter;
+﻿using Microsoft.EntityFrameworkCore;
+using PopularMovieCatalogBackend.Filter;
 
 namespace PopularMovieCatalogBackend
 {
@@ -13,6 +14,11 @@ namespace PopularMovieCatalogBackend
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // database connection Initialised
+            services.AddDbContext<ApplicationDbContext>( options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+
             //Custom Excepcion Filters
             services.AddControllers(option =>
             {
