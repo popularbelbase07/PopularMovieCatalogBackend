@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PopularMovieCatalogBackend.APIBehavior;
 using PopularMovieCatalogBackend.Filter;
+using PopularMovieCatalogBackend.Filters;
 
 namespace PopularMovieCatalogBackend
 {
@@ -23,7 +25,9 @@ namespace PopularMovieCatalogBackend
             services.AddControllers(option =>
             {
                 option.Filters.Add(typeof(MyExceptionFilter));
-            });
+                option.Filters.Add(typeof(ParseBadRequest));
+
+            }).ConfigureApiBehaviorOptions(BadRequestBehavior.Parse);
 
             //Jwt Authentication
            // services.AddAuthentication(JwtBearerDefaults.AuthenticateScheme).AddJwtBearer();
