@@ -32,6 +32,16 @@ namespace PopularMovieCatalogBackend
                 c.SwaggerDoc("v1", new() { Title = " PopularMovieCatalogBackend", Version = "v1" });
             });
 
+            // Adding Cors policy to the system
+            services.AddCors(options =>
+            {
+                var frontendURL = Configuration.GetValue<string>("frontEnd_url");
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader();
+                });
+            });
+
         }
 
         public void Configure(IApplicationBuilder app,  IWebHostEnvironment env, ILogger<Startup> logger)
@@ -46,6 +56,7 @@ namespace PopularMovieCatalogBackend
 
             app.UseHttpsRedirection();
             app.UseRouting();
+            app.UseCors();
             app.UseAuthorization();
             app.UseAuthentication();    
             app.UseEndpoints(endpoints =>
