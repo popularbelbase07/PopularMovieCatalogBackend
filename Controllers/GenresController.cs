@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PopularMovieCatalogBackend.DTOs;
+using PopularMovieCatalogBackend.Helpers.Pagination;
 using PopularMovieCatalogBackend.Model;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -29,9 +30,14 @@ namespace PopularMovieCatalogBackend.Controllers
 
         // GET: api/<GenresController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GenreDTO>>> Get()
+        public async Task<ActionResult<IEnumerable<GenreDTO>>> Get([FromQuery] PaginationDTO paginationDTO)
         {
-            logger.LogInformation("Getting all genres");
+            // Implementating pagination
+            var queryable = context.Genres.AsQueryable();
+            await HttpContext.InsertParametsrPaginationInHeader(queryable);
+            var genres = await queryable.OrderBy(x => x.Name).Pagination(paginationDTO).ToListAsync();
+
+            // logger.LogInformation("Getting all genres");
             //  return await context.Genres.getListAsync();
             /*
            

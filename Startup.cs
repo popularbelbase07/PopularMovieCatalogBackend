@@ -21,7 +21,7 @@ namespace PopularMovieCatalogBackend
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
-            //Custom Excepcion Filters
+            //Custom Excepcion Filters // BAd request behaviour 
             services.AddControllers(option =>
             {
                 option.Filters.Add(typeof(MyExceptionFilter));
@@ -51,7 +51,8 @@ namespace PopularMovieCatalogBackend
                 var frontendURL = Configuration.GetValue<string>("frontEnd_url");
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader();
+                    builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader()
+                    .WithExposedHeaders (new string[] { "totalAmountOfRecords" });
                 });
             });
 
