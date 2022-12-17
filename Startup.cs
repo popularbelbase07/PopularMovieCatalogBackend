@@ -35,9 +35,6 @@ namespace PopularMovieCatalogBackend
             // Action filter is added
             services.AddTransient<MyExceptionFilter>();
 
-            // Automapper for the database entities mapping with DTOS
-            services.AddAutoMapper(typeof(Startup));
-
             // Add services to the container.
             services.AddControllers();
             services.AddSwaggerGen( c =>
@@ -52,9 +49,12 @@ namespace PopularMovieCatalogBackend
                 options.AddDefaultPolicy(builder =>
                 {
                     builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader()
-                    .WithExposedHeaders (new string[] { "totalAmountOfRecords" });
+                    .WithExposedHeaders(new string[] { "totalAmountOfRecords" });
                 });
             });
+
+            // Automapper for the database entities mapping with DTOS
+            services.AddAutoMapper(typeof(Startup));
 
         }
 

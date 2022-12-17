@@ -11,7 +11,7 @@ using PopularMovieCatalogBackend;
 namespace PopularMovieCatalogBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221212212631_Initial")]
+    [Migration("20221216094548_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

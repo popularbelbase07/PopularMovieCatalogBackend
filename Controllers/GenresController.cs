@@ -18,11 +18,11 @@ namespace PopularMovieCatalogBackend.Controllers
         private readonly IMapper mapper;
 
 
-        public GenresController(ILogger<GenresController> logger , ApplicationDbContext context, IMapper mapper)
+        public GenresController(ILogger<GenresController> logger, ApplicationDbContext context, IMapper mapper)
         {
             this.logger = logger;
             this.context = context;
-           this.mapper = mapper;
+            this.mapper = mapper;
 
         }
 
@@ -32,12 +32,13 @@ namespace PopularMovieCatalogBackend.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GenreDTO>>> Get([FromQuery] PaginationDTO paginationDTO)
         {
+            // logger.LogInformation("Getting all genres");
             // Implementating pagination
             var queryable = context.Genres.AsQueryable();
             await HttpContext.InsertParametsrPaginationInHeader(queryable);
-            var genres = await queryable.OrderBy(x => x.Name).Pagination(paginationDTO).ToListAsync();
+            var genres = await queryable.OrderBy(x => x.Name).Paginate(paginationDTO).ToListAsync();
 
-            // logger.LogInformation("Getting all genres");
+
             //  return await context.Genres.getListAsync();
             /*
            
@@ -52,7 +53,7 @@ namespace PopularMovieCatalogBackend.Controllers
               }
               return genresDTOs;
             */
-            var genres = await context.Genres.ToListAsync();
+            // var genres = await context.Genres.ToListAsync();
             return mapper.Map<List<GenreDTO>>(genres);
 
 
@@ -60,26 +61,40 @@ namespace PopularMovieCatalogBackend.Controllers
 
         // GET api/<GenresController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ActionResult<GenreDTO>> Get(int id)
         {
-            throw new NotImplementedException();
-        }
+            var getById = await context.Genres.FirstOrDefaultAsync(x => x.Id == id); 
 
+            if(getById == null) { 
+            return NoContent(); 
+            }
+            return mapper.Map<GenreDTO>(getById);              
+        }
         // POST api/<GenresController>
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] GenreCreationDTO genreCreation)
         {
             var genre = mapper.Map<Genre>(genreCreation);
-           context.Genres.Add(genre);
-            await context.SaveChangesAsync(); 
+            context.Genres.Add(genre);
+            await context.SaveChangesAsync();
             return Ok();
         }
 
         // PUT api/<GenresController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<ActionResult> Put(int id, [FromBody] GenreCreationDTO genreCreateDTO)
         {
-            throw new NotImplementedException();
+            var updateGenre = await context.Genres.FirstOrDefaultAsync(_ => _.Id == id);
+
+            if (updateGenre == null)
+            {
+                return NotFound();
+            }
+
+            updateGenre= mapper.Map(genreCreateDTO, updateGenre);
+            await context.SaveChangesAsync();
+            return Ok($"{id} of the Genre is updated !! ");
+
         }
 
         // DELETE api/<GenresController>/5

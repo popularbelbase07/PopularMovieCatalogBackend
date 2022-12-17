@@ -3,17 +3,17 @@
     public class PaginationDTO
     {
         public int Page { get; set; } = 1;
-        private int recordPerPage = 10; 
-        private readonly int maxmiumRecordPerPage = 50;
+        private int recordsPerPage = 10; 
+        private readonly int maxmiumRecordsPerPage = 50;
 
 
 
         public int RecordsPerPage {
             get
-            { return recordPerPage; }
+            { return recordsPerPage; }
             set
             {
-                recordPerPage = (value>maxmiumRecordPerPage) ? value : maxmiumRecordPerPage;
+                recordsPerPage = (value > maxmiumRecordsPerPage) ? maxmiumRecordsPerPage : value;
             }
         }
     }
