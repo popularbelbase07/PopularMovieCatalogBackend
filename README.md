@@ -9,5 +9,10 @@ Microsoft.EntityFrameworkCore.Tools
 3. Working with database using Entity Framework and needs to do following steps.
 Add-Migration Initial
 Update-Database
+
+4. Working with database using Actors
+Add-Migration Actors
+Update-Database
+
  
 

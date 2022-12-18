@@ -1,4 +1,4 @@
-﻿using PopularMovieCatalogBackend.DTOs;
+﻿using PopularMovieCatalogBackend.DTOs.Genre;
 
 namespace PopularMovieCatalogBackend.Helpers.Pagination
 {

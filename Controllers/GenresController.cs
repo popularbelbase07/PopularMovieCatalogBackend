@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PopularMovieCatalogBackend.DTOs;
+using PopularMovieCatalogBackend.DTOs.Genre;
 using PopularMovieCatalogBackend.Helpers.Pagination;
 using PopularMovieCatalogBackend.Model;
 
@@ -99,9 +99,18 @@ namespace PopularMovieCatalogBackend.Controllers
 
         // DELETE api/<GenresController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            throw new NotImplementedException();
+            var existData = await context.Genres.AnyAsync(x => x.Id == id);
+
+            if (!existData)
+            {
+                return NotFound();
+
+            }
+            context.Remove(new Genre() { Id = id });
+            await context.SaveChangesAsync();
+            return Ok($"The ID : {id} of the genre is Deleted !!!");
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using PopularMovieCatalogBackend.Validation;
 using System.ComponentModel.DataAnnotations;
 
-namespace PopularMovieCatalogBackend.DTOs
+namespace PopularMovieCatalogBackend.DTOs.Genre
 {
     public class GenreCreationDTO
     {
