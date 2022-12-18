@@ -2,6 +2,7 @@
 using PopularMovieCatalogBackend.APIBehavior;
 using PopularMovieCatalogBackend.Filter;
 using PopularMovieCatalogBackend.Filters;
+using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
 
 namespace PopularMovieCatalogBackend
 {
@@ -55,6 +56,10 @@ namespace PopularMovieCatalogBackend
 
             // Automapper for the database entities mapping with DTOS
             services.AddAutoMapper(typeof(Startup));
+
+            // Dependencis for AzureStorage Services
+            services.AddScoped<IFileStorageServices, AzureStorageServices>();
+
 
         }
 

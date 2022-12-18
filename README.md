@@ -14,5 +14,9 @@ Update-Database
 Add-Migration Actors
 Update-Database
 
+To work with Azure storage install following solution from neuget package manager
+
+Azure.Storage.Blobs
+
  
 

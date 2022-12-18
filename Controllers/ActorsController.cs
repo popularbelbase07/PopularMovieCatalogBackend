@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PopularMovieCatalogBackend.DTOs.Actor;
+using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
 using PopularMovieCatalogBackend.Model;
 
 namespace PopularMovieCatalogBackend.Controllers
@@ -12,11 +13,14 @@ namespace PopularMovieCatalogBackend.Controllers
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
+        private readonly IFileStorageServices fileStorageService;
+        private readonly string containerName = "actors";
 
-        public ActorsController(ApplicationDbContext context, IMapper mapper)
+        public ActorsController(ApplicationDbContext context, IMapper mapper, IFileStorageServices fileStorageService)
         {
             this.context = context;
             this.mapper = mapper;
+            this.fileStorageService = fileStorageService;
         }
 
         [HttpGet]
@@ -39,7 +43,14 @@ namespace PopularMovieCatalogBackend.Controllers
         [HttpPost]
         public async Task<ActionResult>Post([FromForm]ActorCreationDTO actorCreationDTO)
         {
-            return NoContent();  
+            var actor = mapper.Map<Actor>(actorCreationDTO);    
+            if(actorCreationDTO != null)
+            {
+                actor.Picture = await fileStorageService.SaveFiles(containerName, actorCreationDTO.Picture);
+            }
+            context.Add(actor);
+            await context.SaveChangesAsync();
+            return NoContent();
         }
 
 
