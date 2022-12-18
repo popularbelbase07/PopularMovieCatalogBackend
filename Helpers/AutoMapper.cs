@@ -17,7 +17,7 @@ namespace PopularMovieCatalogBackend.Helpers
             CreateMap<ActorDTO, Actor>().ReverseMap();
             CreateMap<ActorCreationDTO, Actor>()
                 // Ignore the picture property from the ActorCreationDTO
-            .ForMember(x => x.Pictute, options => options.Ignore());
+            .ForMember(x => x.Picture, options => options.Ignore());
         }
     }
 }

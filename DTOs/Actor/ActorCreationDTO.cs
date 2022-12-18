@@ -9,6 +9,7 @@ namespace PopularMovieCatalogBackend.DTOs.Actor
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Biography { get; set; }
-       // public string Pictute { get; set; }
+        // reciving the picture from the client side as a input
+        public IFormFile Picture { get; set; }
     }
 }

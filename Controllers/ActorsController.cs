@@ -37,14 +37,14 @@ namespace PopularMovieCatalogBackend.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult>Post([FromBody]ActorCreationDTO actorCreationDTO)
+        public async Task<ActionResult>Post([FromForm]ActorCreationDTO actorCreationDTO)
         {
-            throw new NotImplementedException();
+            return NoContent();  
         }
 
 
         [HttpPut]
-        public async Task<ActionResult>Put(int id , [FromBody]ActorCreationDTO actorCreationDTO)
+        public async Task<ActionResult>Put(int id , [FromForm] ActorCreationDTO actorCreationDTO)
         {
             throw new NotImplementedException();
         }
