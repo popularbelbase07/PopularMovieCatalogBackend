@@ -9,6 +9,8 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Core.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Storage.Common.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Humanizer.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
@@ -46,6 +48,7 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\System.IO.Hashing.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Memory.Data.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Runtime.Caching.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
@@ -87,6 +90,4 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.pdb
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.genruntimeconfig.cache
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\ref\PopularMovieCatalogBackend.dll
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Storage.Blobs.dll
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Storage.Common.dll
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\System.IO.Hashing.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.staticwebassets.runtime.json

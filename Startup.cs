@@ -3,6 +3,7 @@ using PopularMovieCatalogBackend.APIBehavior;
 using PopularMovieCatalogBackend.Filter;
 using PopularMovieCatalogBackend.Filters;
 using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
+using PopularMovieCatalogBackend.Helpers.ImageLocalStorage;
 
 namespace PopularMovieCatalogBackend
 {
@@ -58,7 +59,12 @@ namespace PopularMovieCatalogBackend
             services.AddAutoMapper(typeof(Startup));
 
             // Dependencis for AzureStorage Services
-            services.AddScoped<IFileStorageServices, AzureStorageServices>();
+            //services.AddScoped<IFileStorageServices, AzureStorageServices>();
+
+            // Dependencis for LocalStorage Services
+            services.AddScoped<IFileStorageServices, ImageStorageServices>();
+            services.AddHttpContextAccessor();
+
 
 
         }
@@ -74,7 +80,9 @@ namespace PopularMovieCatalogBackend
             }
 
             app.UseHttpsRedirection();
-            app.UseRouting();
+            // Dependencis for LocalStorage Services
+            app.UseStaticFiles();
+            app.UseRouting();            
             app.UseCors();
             app.UseAuthorization();
             app.UseAuthentication();    
