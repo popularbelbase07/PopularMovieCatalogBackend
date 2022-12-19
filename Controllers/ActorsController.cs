@@ -59,26 +59,38 @@ namespace PopularMovieCatalogBackend.Controllers
             return NoContent();
         }
 
-
-        [HttpPut]
+        [HttpPut ("{id}")]
         public async Task<ActionResult>Put(int id , [FromForm] ActorCreationDTO actorCreationDTO)
         {
-            throw new NotImplementedException();
+            var actor = await context.Actors.FirstOrDefaultAsync(x => x.Id == id);
+            if(actor == null)
+            {
+                return NotFound();
+            }
+            actor = mapper.Map(actorCreationDTO, actor);
+
+            if(actorCreationDTO.Picture != null)
+            {
+                actor.Picture = await fileStorageService.EditFile(containerName,
+                    actorCreationDTO.Picture, actor.Picture);
+            }
+            await context.SaveChangesAsync();
+            return NoContent();
         }
 
         [HttpDelete("{id}")]    
         public async Task<ActionResult> Delete(int id)
         {
             var actor = await context.Actors.SingleOrDefaultAsync(x => x.Id == id);
-            if (actor == null)
+            if (actor == null)  
             {
                 return NotFound();
             }
 
             context.Remove(actor);
             await context.SaveChangesAsync();
+            await fileStorageService.DeleteFile(actor.Picture, containerName);
             return Ok($"The ID : {id} of the Actor is Deleted !!!");
-
         }
 
     }
