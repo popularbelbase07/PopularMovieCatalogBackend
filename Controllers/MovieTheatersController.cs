@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PopularMovieCatalogBackend.DTOs.Genre;
 using PopularMovieCatalogBackend.DTOs.MovieTheater;
+using PopularMovieCatalogBackend.Helpers.Pagination;
 using PopularMovieCatalogBackend.Model;
 
 namespace PopularMovieCatalogBackend.Controllers
@@ -20,9 +22,12 @@ namespace PopularMovieCatalogBackend.Controllers
 
         }
         [HttpGet]
-        public async Task<ActionResult<List<MovieTheaterDTO>>> Get()
+        public async Task<ActionResult<List<MovieTheaterDTO>>> Get([FromQuery] PaginationDTO paginationDTO)
         {
-            var entities = await context.MoviesTheaters.ToListAsync();
+            var queryable = context.MoviesTheaters.AsQueryable();
+            await HttpContext.InsertParametsrPaginationInHeader(queryable);
+            var entities = await queryable.OrderBy(_ => _.Name).Paginate(paginationDTO).ToListAsync() ;
+            //var entities = await context.MoviesTheaters.ToListAsync();
             return mapper.Map<List<MovieTheaterDTO>>(entities);
 
         }
