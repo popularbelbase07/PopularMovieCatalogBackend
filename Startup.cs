@@ -1,7 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using NetTopologySuite;
+using NetTopologySuite.Geometries;
 using PopularMovieCatalogBackend.APIBehavior;
 using PopularMovieCatalogBackend.Filter;
 using PopularMovieCatalogBackend.Filters;
+using PopularMovieCatalogBackend.Helpers;
 using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
 using PopularMovieCatalogBackend.Helpers.ImageLocalStorage;
 
@@ -20,7 +25,9 @@ namespace PopularMovieCatalogBackend
         {
             // database connection Initialised
             services.AddDbContext<ApplicationDbContext>( options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), 
+            // For location and map
+            sqlOptions => sqlOptions.UseNetTopologySuite()));
 
 
             //Custom Excepcion Filters // BAd request behaviour 
@@ -57,6 +64,15 @@ namespace PopularMovieCatalogBackend
 
             // Automapper for the database entities mapping with DTOS
             services.AddAutoMapper(typeof(Startup));
+
+            services.AddSingleton(provider => new MapperConfiguration(config =>
+            {
+            var geometryFactory = provider.GetRequiredService<GeometryFactory>();
+            config.AddProfile(new AutoMapperProfiles(geometryFactory));
+            }).CreateMapper());
+
+            services.AddSingleton<GeometryFactory>(NtsGeometryServices.Instance.CreateGeometryFactory(srid: 4326));
+
 
             // Dependencis for AzureStorage Services
             services.AddScoped<IFileStorageServices, AzureStorageServices>();

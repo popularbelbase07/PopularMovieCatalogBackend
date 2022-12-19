@@ -91,3 +91,7 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.genruntimeconfig.cache
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\ref\PopularMovieCatalogBackend.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.staticwebassets.runtime.json
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs

@@ -18,5 +18,7 @@ To work with Azure storage install following solution from neuget package manage
 
 Azure.Storage.Blobs
 
+NetTopologySuite support for the Microsoft SQL Server database provider for Entity Framework Core.
+
  
 
