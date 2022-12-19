@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3A+mexGZ1ddvfOb+IIL1h0Izxxp+Ip5ql0qD3VsYpPQ=",
+  "Hash": "SxnUeThpRFJLwGtBDwUB6rdsjqOGGj6sYabPUM7P+pY=",
   "Source": "PopularMovieCatalogBackend",
   "BasePath": "_content/PopularMovieCatalogBackend",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\popul\\source\\Dissertation Project\\PopularMovieCatalogBackend\\wwwroot\\actors\\cfca7c27-aad8-420b-b6df-ebe94901776f.png",
+      "SourceId": "PopularMovieCatalogBackend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\popul\\source\\Dissertation Project\\PopularMovieCatalogBackend\\wwwroot\\",
+      "BasePath": "_content/PopularMovieCatalogBackend",
+      "RelativePath": "actors/cfca7c27-aad8-420b-b6df-ebe94901776f.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\actors\\cfca7c27-aad8-420b-b6df-ebe94901776f.png"
+    }
+  ]
 }

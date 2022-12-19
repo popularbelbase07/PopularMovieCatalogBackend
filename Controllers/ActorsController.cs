@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PopularMovieCatalogBackend.DTOs.Actor;
+using PopularMovieCatalogBackend.DTOs.Genre;
 using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
+using PopularMovieCatalogBackend.Helpers.Pagination;
 using PopularMovieCatalogBackend.Model;
 
 namespace PopularMovieCatalogBackend.Controllers
@@ -24,9 +26,13 @@ namespace PopularMovieCatalogBackend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ActorDTO>>> Get()
+        //Implementating pagination with actor
+        public async Task<ActionResult<List<ActorDTO>>> Get([FromQuery] PaginationDTO pagination)
         {
-            var actors = await context.Actors.ToListAsync();
+            var queryable = context.Actors.AsQueryable();
+            await HttpContext.InsertParametsrPaginationInHeader(queryable);
+            var actors = await queryable.OrderBy(x => x.Name).Paginate(pagination).ToListAsync();   
+           // var actors = await context.Actors.ToListAsync();
             return mapper.Map<List<ActorDTO>>(actors);
         }
         [HttpGet("{id}")]
