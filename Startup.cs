@@ -59,11 +59,13 @@ namespace PopularMovieCatalogBackend
             services.AddAutoMapper(typeof(Startup));
 
             // Dependencis for AzureStorage Services
-            //services.AddScoped<IFileStorageServices, AzureStorageServices>();
+            services.AddScoped<IFileStorageServices, AzureStorageServices>();
 
+            /*
             // Dependencis for LocalStorage Services
             services.AddScoped<IFileStorageServices, ImageStorageServices>();
             services.AddHttpContextAccessor();
+            */
 
 
 
