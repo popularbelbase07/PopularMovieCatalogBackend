@@ -20,5 +20,9 @@ Azure.Storage.Blobs
 
 NetTopologySuite support for the Microsoft SQL Server database provider for Entity Framework Core.
 
+* Migrate all Movie Related using 
+Add-Migration MovieAndFriends
+update-database
+
  
 

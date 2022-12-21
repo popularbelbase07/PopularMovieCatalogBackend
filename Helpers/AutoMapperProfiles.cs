@@ -4,6 +4,7 @@ using PopularMovieCatalogBackend.DTOs.Actor;
 using PopularMovieCatalogBackend.DTOs.Genre;
 using PopularMovieCatalogBackend.DTOs.MovieTheater;
 using PopularMovieCatalogBackend.Model;
+using PopularMovieCatalogBackend.Model.Movies;
 
 namespace PopularMovieCatalogBackend.Helpers
 {

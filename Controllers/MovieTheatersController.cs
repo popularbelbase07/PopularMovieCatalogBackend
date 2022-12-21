@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using PopularMovieCatalogBackend.DTOs.Genre;
 using PopularMovieCatalogBackend.DTOs.MovieTheater;
 using PopularMovieCatalogBackend.Helpers.Pagination;
-using PopularMovieCatalogBackend.Model;
+using PopularMovieCatalogBackend.Model.Movies;
 
 namespace PopularMovieCatalogBackend.Controllers
 {
@@ -77,7 +77,7 @@ namespace PopularMovieCatalogBackend.Controllers
                 return NotFound();
 
             }
-            context.Remove(new Genre() { Id = id });
+            context.Remove(new MovieTheater { Id = id });
             await context.SaveChangesAsync();
             return Ok($"The ID : {id} of the genre is Deleted !!!");
 

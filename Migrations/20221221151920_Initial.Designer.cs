@@ -13,7 +13,7 @@ using PopularMovieCatalogBackend;
 namespace PopularMovieCatalogBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221219221703_Initial")]
+    [Migration("20221221151920_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -35,7 +35,6 @@ namespace PopularMovieCatalogBackend.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Biography")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateOfBirth")
@@ -47,7 +46,6 @@ namespace PopularMovieCatalogBackend.Migrations
                         .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("Picture")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
