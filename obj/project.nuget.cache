@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7Mpev3zhIZANUUzLKt54Tm9aZwCf9deYoTg7sfufncWwM9NvEmr8a+bleu0akGHx4Ye7eXARzDotIwXX6j55rQ==",
+  "dgSpecHash": "eADB9rNXLHMuFi/eH6J0AV1teEbWzBGyjBslzC7hAYy/mY7EQPYU+SSc02U40vmUpvGV1jeRuaQCwM0ABhxx9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\popul\\source\\Dissertation Project\\PopularMovieCatalogBackend\\PopularMovieCatalogBackend.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,8 @@
     "C:\\Users\\popul\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\nettopologysuite\\2.5.0\\nettopologysuite.2.5.0.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\nettopologysuite.io.sqlserverbytes\\2.1.0\\nettopologysuite.io.sqlserverbytes.2.1.0.nupkg.sha512",
+    "C:\\Users\\popul\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\popul\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\popul\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
