@@ -25,6 +25,8 @@ namespace PopularMovieCatalogBackend.Model.Movies
 
         public List<MovieTheatersMovies> MovieTheatersMovies { get; }
 
+        public List<MoviesActors> MoviesActors { get; set; }
+
 
     }
 }

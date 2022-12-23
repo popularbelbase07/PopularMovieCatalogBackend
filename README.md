@@ -24,5 +24,8 @@ NetTopologySuite support for the Microsoft SQL Server database provider for Enti
 Add-Migration MovieAndFriends
 update-database
 
+* Model Binding 
+NewtonSoftJson for serialization.
+
  
 

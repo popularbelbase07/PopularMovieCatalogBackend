@@ -95,3 +95,5 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
