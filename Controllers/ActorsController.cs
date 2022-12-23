@@ -31,8 +31,8 @@ namespace PopularMovieCatalogBackend.Controllers
         {
             var queryable = context.Actors.AsQueryable();
             await HttpContext.InsertParametsrPaginationInHeader(queryable);
-            var actors = await queryable.OrderBy(x => x.Name).Paginate(pagination).ToListAsync();   
-           // var actors = await context.Actors.ToListAsync();
+            var actors = await queryable.OrderBy(x => x.Name).Paginate(pagination).ToListAsync();
+            // var actors = await context.Actors.ToListAsync();
             return mapper.Map<List<ActorDTO>>(actors);
         }
         [HttpGet("{id}")]
@@ -47,10 +47,10 @@ namespace PopularMovieCatalogBackend.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult>Post([FromForm]ActorCreationDTO actorCreationDTO)
+        public async Task<ActionResult> Post([FromForm] ActorCreationDTO actorCreationDTO)
         {
-            var actor = mapper.Map<Actor>(actorCreationDTO);    
-            if(actorCreationDTO != null)
+            var actor = mapper.Map<Actor>(actorCreationDTO);
+            if (actorCreationDTO != null)
             {
                 actor.Picture = await fileStorageService.SaveFiles(containerName, actorCreationDTO.Picture);
             }
@@ -59,17 +59,17 @@ namespace PopularMovieCatalogBackend.Controllers
             return NoContent();
         }
 
-        [HttpPut ("{id}")]
-        public async Task<ActionResult>Put(int id , [FromForm] ActorCreationDTO actorCreationDTO)
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Put(int id, [FromForm] ActorCreationDTO actorCreationDTO)
         {
             var actor = await context.Actors.FirstOrDefaultAsync(x => x.Id == id);
-            if(actor == null)
+            if (actor == null)
             {
                 return NotFound();
             }
             actor = mapper.Map(actorCreationDTO, actor);
 
-            if(actorCreationDTO.Picture != null)
+            if (actorCreationDTO.Picture != null)
             {
                 actor.Picture = await fileStorageService.EditFile(containerName,
                     actorCreationDTO.Picture, actor.Picture);
@@ -78,11 +78,11 @@ namespace PopularMovieCatalogBackend.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]    
+        [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
             var actor = await context.Actors.SingleOrDefaultAsync(x => x.Id == id);
-            if (actor == null)  
+            if (actor == null)
             {
                 return NotFound();
             }
@@ -91,6 +91,21 @@ namespace PopularMovieCatalogBackend.Controllers
             await context.SaveChangesAsync();
             await fileStorageService.DeleteFile(actor.Picture, containerName);
             return Ok($"The ID : {id} of the Actor is Deleted !!!");
+        }
+
+        //Search by name for Actors
+        [HttpGet ("searchByName/{query}")]
+
+        public async Task<ActionResult<List<ActorsMovieDTO>>> SearchByName(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                return new List<ActorsMovieDTO>();  
+            }
+            return await context.Actors.Where(x => x.Name.Contains(query))
+                .OrderBy(x => x.Name).Select(x => new ActorsMovieDTO { Id = x.Id, Name = x.Name, Picture = x.Picture })
+                .Take(5).ToListAsync();  
+
         }
 
     }
