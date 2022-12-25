@@ -16,14 +16,13 @@ namespace PopularMovieCatalogBackend
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity< MoviesActors>()
-                .HasKey(x => new {x.ActorId,x.MovieId});    
+                .HasKey(x => new { x.MovieId, x.ActorId });    
 
             modelBuilder.Entity<MoviesGenres>()
                 .HasKey(x => new {x.MovieId, x.GenreId});
 
             modelBuilder.Entity<MovieTheatersMovies>()
-                .HasKey(x => new { x.MovieTheatersId, x.MovieId });
-
+                .HasKey(x => new { x.MovieTheaterId, x.MovieId });
 
             base.OnModelCreating(modelBuilder);
         }

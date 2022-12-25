@@ -1,16 +1,46 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using NetTopologySuite.Geometries;
 
 #nullable disable
 
 namespace PopularMovieCatalogBackend.Migrations
 {
     /// <inheritdoc />
-    public partial class MovieAndFriends : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Actors",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Biography = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Picture = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Actors", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Genres",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Genres", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Movies",
                 columns: table => new
@@ -18,15 +48,29 @@ namespace PopularMovieCatalogBackend.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
-                    Summary = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Trailer = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Summary = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Trailer = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     InTheaters = table.Column<bool>(type: "bit", nullable: false),
                     ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Poster = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Poster = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Movies", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MoviesTheaters",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(75)", maxLength: 75, nullable: false),
+                    Location = table.Column<Point>(type: "geography", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MoviesTheaters", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,12 +79,12 @@ namespace PopularMovieCatalogBackend.Migrations
                 {
                     MovieId = table.Column<int>(type: "int", nullable: false),
                     ActorId = table.Column<int>(type: "int", nullable: false),
-                    Character = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
+                    Character = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: true),
                     Order = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MoviesActors", x => new { x.ActorId, x.MovieId });
+                    table.PrimaryKey("PK_MoviesActors", x => new { x.MovieId, x.ActorId });
                     table.ForeignKey(
                         name: "FK_MoviesActors_Actors_ActorId",
                         column: x => x.ActorId,
@@ -83,13 +127,12 @@ namespace PopularMovieCatalogBackend.Migrations
                 name: "MovieTheatersMovies",
                 columns: table => new
                 {
-                    MovieTheatersId = table.Column<int>(type: "int", nullable: false),
-                    MovieId = table.Column<int>(type: "int", nullable: false),
-                    MovieTheaterId = table.Column<int>(type: "int", nullable: false)
+                    MovieTheaterId = table.Column<int>(type: "int", nullable: false),
+                    MovieId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MovieTheatersMovies", x => new { x.MovieTheatersId, x.MovieId });
+                    table.PrimaryKey("PK_MovieTheatersMovies", x => new { x.MovieTheaterId, x.MovieId });
                     table.ForeignKey(
                         name: "FK_MovieTheatersMovies_MoviesTheaters_MovieTheaterId",
                         column: x => x.MovieTheaterId,
@@ -105,9 +148,9 @@ namespace PopularMovieCatalogBackend.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_MoviesActors_MovieId",
+                name: "IX_MoviesActors_ActorId",
                 table: "MoviesActors",
-                column: "MovieId");
+                column: "ActorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MoviesGenres_GenreId",
@@ -118,11 +161,6 @@ namespace PopularMovieCatalogBackend.Migrations
                 name: "IX_MovieTheatersMovies_MovieId",
                 table: "MovieTheatersMovies",
                 column: "MovieId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MovieTheatersMovies_MovieTheaterId",
-                table: "MovieTheatersMovies",
-                column: "MovieTheaterId");
         }
 
         /// <inheritdoc />
@@ -136,6 +174,15 @@ namespace PopularMovieCatalogBackend.Migrations
 
             migrationBuilder.DropTable(
                 name: "MovieTheatersMovies");
+
+            migrationBuilder.DropTable(
+                name: "Actors");
+
+            migrationBuilder.DropTable(
+                name: "Genres");
+
+            migrationBuilder.DropTable(
+                name: "MoviesTheaters");
 
             migrationBuilder.DropTable(
                 name: "Movies");

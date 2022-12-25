@@ -94,7 +94,7 @@ namespace PopularMovieCatalogBackend.Controllers
         }
 
         //Search by name for Actors
-        [HttpGet ("searchByName/{query}")]
+        [HttpGet ("searchByName/{query}")] 
 
         public async Task<ActionResult<List<ActorsMovieDTO>>> SearchByName(string query)
         {

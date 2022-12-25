@@ -13,8 +13,8 @@ using PopularMovieCatalogBackend;
 namespace PopularMovieCatalogBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221221185503_MovieAndFriends")]
-    partial class MovieAndFriends
+    [Migration("20221225103254_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,14 +83,12 @@ namespace PopularMovieCatalogBackend.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Poster")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Summary")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -99,7 +97,6 @@ namespace PopularMovieCatalogBackend.Migrations
                         .HasColumnType("nvarchar(80)");
 
                     b.Property<string>("Trailer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -116,7 +113,6 @@ namespace PopularMovieCatalogBackend.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<Point>("Location")
-                        .IsRequired()
                         .HasColumnType("geography");
 
                     b.Property<string>("Name")
@@ -131,43 +127,37 @@ namespace PopularMovieCatalogBackend.Migrations
 
             modelBuilder.Entity("PopularMovieCatalogBackend.Model.Movies.MovieTheatersMovies", b =>
                 {
-                    b.Property<int>("MovieTheatersId")
+                    b.Property<int>("MovieTheaterId")
                         .HasColumnType("int");
 
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MovieTheaterId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MovieTheatersId", "MovieId");
+                    b.HasKey("MovieTheaterId", "MovieId");
 
                     b.HasIndex("MovieId");
-
-                    b.HasIndex("MovieTheaterId");
 
                     b.ToTable("MovieTheatersMovies");
                 });
 
             modelBuilder.Entity("PopularMovieCatalogBackend.Model.Movies.MoviesActors", b =>
                 {
-                    b.Property<int>("ActorId")
-                        .HasColumnType("int");
-
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ActorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Character")
-                        .IsRequired()
                         .HasMaxLength(80)
                         .HasColumnType("nvarchar(80)");
 
                     b.Property<int>("Order")
                         .HasColumnType("int");
 
-                    b.HasKey("ActorId", "MovieId");
+                    b.HasKey("MovieId", "ActorId");
 
-                    b.HasIndex("MovieId");
+                    b.HasIndex("ActorId");
 
                     b.ToTable("MoviesActors");
                 });
@@ -215,7 +205,7 @@ namespace PopularMovieCatalogBackend.Migrations
                         .IsRequired();
 
                     b.HasOne("PopularMovieCatalogBackend.Model.Movies.Movie", "Movie")
-                        .WithMany()
+                        .WithMany("MoviesActors")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -247,6 +237,8 @@ namespace PopularMovieCatalogBackend.Migrations
             modelBuilder.Entity("PopularMovieCatalogBackend.Model.Movies.Movie", b =>
                 {
                     b.Navigation("MovieTheatersMovies");
+
+                    b.Navigation("MoviesActors");
 
                     b.Navigation("MoviesGenres");
                 });

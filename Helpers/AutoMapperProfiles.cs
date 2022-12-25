@@ -34,13 +34,13 @@ namespace PopularMovieCatalogBackend.Helpers
             //Auto Mapper for Movie
             CreateMap<MovieCreationDTO, Movie>()
                 .ForMember(x => x.Poster, options => options.Ignore())
-                .ForMember(x => x.MoviesGenres, options => options.MapFrom(MapMovieGenres))
-                .ForMember(x => x.MovieTheatersMovies, Options => Options.MapFrom(MapMovieTheatersMovies))
-                .ForMember(x => x.MoviesActors, Options => Options.MapFrom(MapMoviesActors));
+                .ForMember(x => x.MoviesGenres, options => options.MapFrom(MapMoviesGenres))
+                .ForMember(x => x.MovieTheatersMovies, options => options.MapFrom(MapMovieTheatersMovies))
+                .ForMember(x => x.MoviesActors, options => options.MapFrom(MapMoviesActors));
 
         }
 
-        private List<MoviesGenres> MapMovieGenres(MovieCreationDTO movieCreationDTO, Movie movie)
+        private List<MoviesGenres> MapMoviesGenres(MovieCreationDTO movieCreationDTO, Movie movie)
         {
             var result = new List<MoviesGenres>();
                 if(movieCreationDTO.GenresIds == null)
@@ -62,7 +62,7 @@ namespace PopularMovieCatalogBackend.Helpers
 
             foreach(var id in movieCreationDTO.MovieTheatersIds)
             {
-                result.Add(new MovieTheatersMovies() { MovieTheatersId = id });
+                result.Add(new MovieTheatersMovies() { MovieTheaterId = id });
             }
             return result;
 

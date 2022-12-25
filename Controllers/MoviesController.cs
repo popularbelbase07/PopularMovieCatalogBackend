@@ -10,14 +10,14 @@ using PopularMovieCatalogBackend.Model.Movies;
 
 namespace PopularMovieCatalogBackend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/movies")]
     [ApiController]
     public class MoviesController : ControllerBase
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
         private readonly IFileStorageServices fileStorageService;
-        private string containerName = "Movies";
+        private string containerName = "movies";
 
         public MoviesController(ApplicationDbContext context, IMapper mapper, IFileStorageServices fileStorageService)
         {
@@ -38,27 +38,26 @@ namespace PopularMovieCatalogBackend.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromForm] MovieCreationDTO movieCreationDTO)
+        public async Task<ActionResult<int>> Post([FromForm] MovieCreationDTO movieCreationDTO)
         {
             var movie = mapper.Map<Movie>(movieCreationDTO);
-            if(movieCreationDTO.Poster != null) { 
-            
-                movie.Poster = await fileStorageService.SaveFiles(containerName, movieCreationDTO.Poster);  
+            if (movieCreationDTO.Poster != null)
+            {
+                movie.Poster = await fileStorageService.SaveFiles(containerName, movieCreationDTO.Poster);
             }
-            AnnotateActorOrder(movie);  
+            AnnotateActorOrder(movie);
             context.Add(movie);
             await context.SaveChangesAsync();
-            return NoContent(); 
-
+            return movie.Id;
         }
 
         private void AnnotateActorOrder(Movie movie)
         {
-            if(movie.MoviesActors != null)
+            if (movie.MoviesActors != null)
             {
-                for(int i = 0; i< movie.MoviesActors.Count; i++)
+                for (int i = 0; i < movie.MoviesActors.Count; i++)
                 {
-                    movie.MoviesActors[i].Order= i; 
+                    movie.MoviesActors[i].Order = i;
                 }
             }
         }

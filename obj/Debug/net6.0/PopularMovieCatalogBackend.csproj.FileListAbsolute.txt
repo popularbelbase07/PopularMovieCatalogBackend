@@ -1,5 +1,7 @@
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\appsettings.json
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\package-lock.json
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.staticwebassets.runtime.json
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.exe
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.deps.json
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.runtimeconfig.json
@@ -19,6 +21,7 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -41,6 +44,10 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -76,6 +83,7 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.csproj.CoreCompileInputs.cache
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets\msbuild.PopularMovieCatalogBackend.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets\msbuild.build.PopularMovieCatalogBackend.props
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.PopularMovieCatalogBackend.props
@@ -90,10 +98,3 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.pdb
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.genruntimeconfig.cache
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\ref\PopularMovieCatalogBackend.dll
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.staticwebassets.runtime.json
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.dll
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

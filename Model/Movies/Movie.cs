@@ -8,9 +8,9 @@ namespace PopularMovieCatalogBackend.Model.Movies
 
         [StringLength(maximumLength: 80)]
         [Required]
-        public string Title { get; set; }
+        public string Title { get; set; } 
 
-        public string Summary { get; set; }
+        public string? Summary { get; set; }
 
         public string Trailer { get; set; }
 
@@ -18,7 +18,7 @@ namespace PopularMovieCatalogBackend.Model.Movies
 
         public DateTime ReleaseDate { get; set; }
 
-        public string Poster { get; set; }
+        public string? Poster { get; set; }
 
         // Many to many Relationship
         public List<MoviesGenres> MoviesGenres { get; set; }
