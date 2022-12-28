@@ -10,7 +10,7 @@ using PopularMovieCatalogBackend.Model.Movies;
 
 namespace PopularMovieCatalogBackend.Controllers
 {
-    [Route("api/movies")]
+    [Route("api/[controller]")]
     [ApiController]
     public class MoviesController : ControllerBase
     {
@@ -25,6 +25,31 @@ namespace PopularMovieCatalogBackend.Controllers
             this.mapper = mapper;
             this.fileStorageService = fileStorageService;
         }
+        // Get Movies by Id
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<MovieDTO>>Get(int Id)
+        {
+            var movie = await context.Movies
+                .Include(x => x.MoviesGenres).ThenInclude(x => x.Genre)
+                .Include(x => x.MovieTheatersMovies).ThenInclude(x=> x.MovieTheater)
+                .Include(x => x.MoviesActors).ThenInclude(x => x.Actor)
+                .FirstOrDefaultAsync(x => x.Id == Id);  
+
+            if(movie == null)
+            {
+                return Ok("No movies Found");
+            }
+            var dto = mapper.Map<MovieDTO>(movie);
+            dto.Actors.OrderBy(x => x.Order).ToList();
+            return dto;
+            
+
+
+
+        }
+
+        //Get all the Theaters and Genres in Create Movie frontend
         [HttpGet("PostGet")]
         public async Task<ActionResult<MoviePostGetDTO>> PostGet()
         {

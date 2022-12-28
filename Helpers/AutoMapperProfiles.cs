@@ -43,9 +43,9 @@ namespace PopularMovieCatalogBackend.Helpers
 
             // Auto Mapper for movies by id
             CreateMap<Movie, MovieDTO>()
-                .ForMember(x => x.Genres, option => option.MapFrom(MapSpecificMoviesGenres))
-                .ForMember(x => x.MovieTheaters, option => option.MapFrom(MapSpecificMovieTheatersMovies))
-                .ForMember(x => x.Actors, option => option.MapFrom(MapSpecificMoviesActors));
+                .ForMember(x => x.Genres, options => options.MapFrom(MapSpecificMoviesGenres))
+                .ForMember(x => x.MovieTheaters, options => options.MapFrom(MapSpecificMovieTheatersMovies))
+                .ForMember(x => x.Actors, options => options.MapFrom(MapSpecificMoviesActors));
 
         }
         // All three following private methods are for CREATE MOVIE
@@ -131,15 +131,15 @@ namespace PopularMovieCatalogBackend.Helpers
             return result;
         }
 
-        private List<DTOs.Movie.ActorsMovieDTO> MapSpecificMoviesActors(Movie movie, MovieDTO movieDTO)
+        private List<ActorsMovieDTO> MapSpecificMoviesActors(Movie movie, MovieDTO movieDTO)
         {
-            var result = new List<DTOs.Movie.ActorsMovieDTO>();
+            var result = new List<ActorsMovieDTO>();
 
             if (movie.MoviesActors != null)
             {
                 foreach (var moviesActor in movie.MoviesActors)
                 {
-                    result.Add(new DTOs.Movie.ActorsMovieDTO()
+                    result.Add(new ActorsMovieDTO()
                     {
                         Id = moviesActor.ActorId,
                         Name = moviesActor.Actor.Name,
@@ -155,14 +155,4 @@ namespace PopularMovieCatalogBackend.Helpers
 
 
     }
-}
-
-
-public class MyProfile : Profile
-{
-   public MyProfile()
-   {
-
-        CreateMap<MovieCreationDTO, Movie>();
-   }
 }
