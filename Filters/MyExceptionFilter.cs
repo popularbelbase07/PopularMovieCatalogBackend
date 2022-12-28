@@ -15,7 +15,7 @@ namespace PopularMovieCatalogBackend.Filter
         {
             logger.LogError(context.Exception, context.Exception.Message);
             base.OnException(context);
-        }
+         }
 
     }
 }

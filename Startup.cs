@@ -63,28 +63,22 @@ namespace PopularMovieCatalogBackend
             });
 
             // Automapper for the database entities mapping with DTOS
-            services.AddAutoMapper(typeof(Startup));
-
+            services.AddAutoMapper(typeof(Startup));          
             services.AddSingleton(provider => new MapperConfiguration(config =>
             {
             var geometryFactory = provider.GetRequiredService<GeometryFactory>();
             config.AddProfile(new AutoMapperProfiles(geometryFactory));
             }).CreateMapper());
-
             services.AddSingleton<GeometryFactory>(NtsGeometryServices.Instance.CreateGeometryFactory(srid: 4326));
 
 
             // Dependencis for AzureStorage Services
             services.AddScoped<IFileStorageServices, AzureStorageServices>();
-
             /*
             // Dependencis for LocalStorage Services
             services.AddScoped<IFileStorageServices, ImageStorageServices>();
             services.AddHttpContextAccessor();
             */
-
-
-
         }
 
         public void Configure(IApplicationBuilder app,  IWebHostEnvironment env, ILogger<Startup> logger)

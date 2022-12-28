@@ -13,7 +13,7 @@ using PopularMovieCatalogBackend;
 namespace PopularMovieCatalogBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221227113151_Initial")]
+    [Migration("20221228142424_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -25,6 +25,21 @@ namespace PopularMovieCatalogBackend.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("PopularMovieCatalogBackend.Entities.Movies.MovieTheatersMovies", b =>
+                {
+                    b.Property<int>("MovieTheaterId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MovieTheaterId", "MovieId");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("MovieTheatersMovies");
+                });
 
             modelBuilder.Entity("PopularMovieCatalogBackend.Model.Actor", b =>
                 {
@@ -125,21 +140,6 @@ namespace PopularMovieCatalogBackend.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("PopularMovieCatalogBackend.Model.Movies.MovieTheatersMovies", b =>
-                {
-                    b.Property<int>("MovieTheaterId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MovieId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MovieTheaterId", "MovieId");
-
-                    b.HasIndex("MovieId");
-
-                    b.ToTable("MovieTheatersMovies");
-                });
-
             modelBuilder.Entity("PopularMovieCatalogBackend.Model.Movies.MoviesActors", b =>
                 {
                     b.Property<int>("MovieId")
@@ -177,7 +177,7 @@ namespace PopularMovieCatalogBackend.Migrations
                     b.ToTable("MoviesGenres");
                 });
 
-            modelBuilder.Entity("PopularMovieCatalogBackend.Model.Movies.MovieTheatersMovies", b =>
+            modelBuilder.Entity("PopularMovieCatalogBackend.Entities.Movies.MovieTheatersMovies", b =>
                 {
                     b.HasOne("PopularMovieCatalogBackend.Model.Movies.Movie", "Movie")
                         .WithMany("MovieTheatersMovies")

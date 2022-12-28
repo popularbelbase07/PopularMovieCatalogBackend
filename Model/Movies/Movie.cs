@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using PopularMovieCatalogBackend.Entities.Movies;
+using System.ComponentModel.DataAnnotations;
 
 namespace PopularMovieCatalogBackend.Model.Movies
 {
@@ -21,11 +22,11 @@ namespace PopularMovieCatalogBackend.Model.Movies
         public string Poster { get; set; }
 
         // Many to many Relationship
-        public List<MoviesGenres> ?MoviesGenres { get; set; }
+        public List<MoviesGenres> MoviesGenres { get; set; }
 
-        public List<MovieTheatersMovies> ?MovieTheatersMovies { get; }
+        public List<MovieTheatersMovies> MovieTheatersMovies { get; set; }
 
-        public List<MoviesActors> ?MoviesActors { get; set; }
+        public List<MoviesActors> MoviesActors { get; set; }
 
 
     }

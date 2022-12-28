@@ -5,6 +5,7 @@ using PopularMovieCatalogBackend.DTOs.Actor;
 using PopularMovieCatalogBackend.DTOs.Genre;
 using PopularMovieCatalogBackend.DTOs.Movie;
 using PopularMovieCatalogBackend.DTOs.MovieTheater;
+using PopularMovieCatalogBackend.Entities.Movies;
 using PopularMovieCatalogBackend.Model;
 using PopularMovieCatalogBackend.Model.Movies;
 
@@ -62,8 +63,9 @@ namespace PopularMovieCatalogBackend.Helpers
             }
             return result;
         }
+        
 
-        private List<MovieTheatersMovies> MapMovieTheatersMovies(MovieCreationDTO movieCreationDTO, Movie movie)
+         private List<MovieTheatersMovies> MapMovieTheatersMovies(MovieCreationDTO movieCreationDTO, Movie movie)
         {
             var result = new List<MovieTheatersMovies>();
 
@@ -71,11 +73,11 @@ namespace PopularMovieCatalogBackend.Helpers
 
             foreach (var id in movieCreationDTO.MovieTheatersIds)
             {
-                result.Add(new MovieTheatersMovies() { MovieTheaterId = id });
+                result.Add(new MovieTheatersMovies() { MovieTheaterId = id});
             }
             return result;
-
         }
+
 
         private List<MoviesActors> MapMoviesActors(MovieCreationDTO movieCreationDTO, Movie movie)
         {

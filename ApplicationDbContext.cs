@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PopularMovieCatalogBackend.Entities.Movies;
 using PopularMovieCatalogBackend.Model;
 using PopularMovieCatalogBackend.Model.Movies;
 using System.Diagnostics.CodeAnalysis;
