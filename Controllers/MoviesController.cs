@@ -40,7 +40,7 @@ namespace PopularMovieCatalogBackend.Controllers
         [HttpPost]
         public async Task<ActionResult<int>> Post([FromForm] MovieCreationDTO movieCreationDTO)
         {
-            var movie = mapper.Map<Movie>(movieCreationDTO);
+            var movie = mapper.Map<Movie>(movieCreationDTO);          
             if (movieCreationDTO.Poster != null)
             {
                 movie.Poster = await fileStorageService.SaveFiles(containerName, movieCreationDTO.Poster);

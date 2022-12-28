@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PopularMovieCatalogBackend.DTOs.Actor;
 using PopularMovieCatalogBackend.DTOs.Genre;
+using PopularMovieCatalogBackend.DTOs.Movie;
 using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
 using PopularMovieCatalogBackend.Helpers.Pagination;
 using PopularMovieCatalogBackend.Model;

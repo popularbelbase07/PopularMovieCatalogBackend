@@ -68,6 +68,27 @@ namespace PopularMovieCatalogBackend.Migrations
                     b.ToTable("Genres");
                 });
 
+            modelBuilder.Entity("PopularMovieCatalogBackend.Model.MovieTheater", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<Point>("Location")
+                        .HasColumnType("geography");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(75)
+                        .HasColumnType("nvarchar(75)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MoviesTheaters");
+                });
+
             modelBuilder.Entity("PopularMovieCatalogBackend.Model.Movies.Movie", b =>
                 {
                     b.Property<int>("Id")
@@ -99,27 +120,6 @@ namespace PopularMovieCatalogBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Movies");
-                });
-
-            modelBuilder.Entity("PopularMovieCatalogBackend.Model.Movies.MovieTheater", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<Point>("Location")
-                        .HasColumnType("geography");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(75)
-                        .HasColumnType("nvarchar(75)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("MoviesTheaters");
                 });
 
             modelBuilder.Entity("PopularMovieCatalogBackend.Model.Movies.MovieTheatersMovies", b =>
@@ -182,7 +182,7 @@ namespace PopularMovieCatalogBackend.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PopularMovieCatalogBackend.Model.Movies.MovieTheater", "MovieTheater")
+                    b.HasOne("PopularMovieCatalogBackend.Model.MovieTheater", "MovieTheater")
                         .WithMany()
                         .HasForeignKey("MovieTheaterId")
                         .OnDelete(DeleteBehavior.Cascade)

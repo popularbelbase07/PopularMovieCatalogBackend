@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using NetTopologySuite;
 using NetTopologySuite.Geometries;
@@ -8,7 +7,7 @@ using PopularMovieCatalogBackend.Filter;
 using PopularMovieCatalogBackend.Filters;
 using PopularMovieCatalogBackend.Helpers;
 using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
-using PopularMovieCatalogBackend.Helpers.ImageLocalStorage;
+
 
 namespace PopularMovieCatalogBackend
 {
@@ -30,7 +29,8 @@ namespace PopularMovieCatalogBackend
             sqlOptions => sqlOptions.UseNetTopologySuite()));
 
 
-            //Custom Excepcion Filters // BAd request behaviour 
+            //Custom Excepcion Filters 
+            // Bad request behaviour 
             services.AddControllers(option =>
             {
                 option.Filters.Add(typeof(MyExceptionFilter));
@@ -108,8 +108,6 @@ namespace PopularMovieCatalogBackend
             {
                 endpoints.MapControllers();
             });
-
-            app.UseAuthorization();
 
         }
 

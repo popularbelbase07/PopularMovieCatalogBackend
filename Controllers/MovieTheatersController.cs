@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using PopularMovieCatalogBackend.DTOs.Genre;
 using PopularMovieCatalogBackend.DTOs.MovieTheater;
 using PopularMovieCatalogBackend.Helpers.Pagination;
-using PopularMovieCatalogBackend.Model.Movies;
+using PopularMovieCatalogBackend.Model;
 
 namespace PopularMovieCatalogBackend.Controllers
 {

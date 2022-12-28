@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PopularMovieCatalogBackend.Helpers.CustomBinderMovies;
+using System.ComponentModel.DataAnnotations;
 
 namespace PopularMovieCatalogBackend.DTOs.Movie
 {
     public class MovieCreationDTO
     {
+        [StringLength(maximumLength: 80)]
+        [Required]
         public string Title { get; set; }
 
         public bool InTheaters { get; set; }

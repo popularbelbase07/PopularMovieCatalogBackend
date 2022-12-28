@@ -1,7 +1,7 @@
 ﻿using NetTopologySuite.Geometries;
 using System.ComponentModel.DataAnnotations;
 
-namespace PopularMovieCatalogBackend.Model.Movies
+namespace PopularMovieCatalogBackend.Model
 {
     public class MovieTheater
     {

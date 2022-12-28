@@ -1,7 +1,105 @@
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\appsettings.json
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\package-lock.json
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.staticwebassets.runtime.json
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.exe
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.deps.json
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.runtimeconfig.json
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.pdb
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Humanizer.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.IO.Hashing.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.csproj.AssemblyReference.cache
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.AssemblyInfoInputs.cache
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.AssemblyInfo.cs
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.csproj.CoreCompileInputs.cache
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets\msbuild.PopularMovieCatalogBackend.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets\msbuild.build.PopularMovieCatalogBackend.props
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.PopularMovieCatalogBackend.props
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.PopularMovieCatalogBackend.props
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\scopedcss\bundle\PopularMovieCatalogBackend.styles.css
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.csproj.CopyComplete
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\refint\PopularMovieCatalogBackend.dll
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.pdb
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.genruntimeconfig.cache
+C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\ref\PopularMovieCatalogBackend.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\appsettings.json
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\package-lock.json
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.staticwebassets.runtime.json
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.exe
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.deps.json
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.runtimeconfig.json
@@ -47,7 +145,6 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -98,3 +195,4 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.pdb
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.genruntimeconfig.cache
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\ref\PopularMovieCatalogBackend.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\PopularMovieCatalogBackend.staticwebassets.runtime.json
