@@ -110,8 +110,8 @@ namespace PopularMovieCatalogBackend.Controllers
             }
         }
 
-
-        [HttpGet("putget/{id:int}")]
+        // Create a get by id end poinr for getting necessary information to edit the movie
+        [HttpGet("PutGet/{id:int}")]
         public async Task<ActionResult<MoviePutGetDTO>> PutGet(int id)
         {
             var movieById = await Get(id);
@@ -144,7 +144,8 @@ namespace PopularMovieCatalogBackend.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id ,[FromForm] MovieCreationDTO movieCreationDTO )
         {
-            var movie = await context.Movies.Include(x => x.MoviesActors)
+            var movie = await context.Movies
+                .Include(x => x.MoviesActors)
                 .Include(x => x.MoviesGenres)
                 .Include(x => x.MovieTheatersMovies)
                 .FirstOrDefaultAsync(x => x.Id == id);
@@ -163,9 +164,28 @@ namespace PopularMovieCatalogBackend.Controllers
             }
             AnnotateActorOrder(movie);
             await context.SaveChangesAsync();
-            return Ok($"The id {id} is Updated !!");
+            //return Ok($"The id {id} is Updated !!");
+            return NoContent(); 
 
         }
+       
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+            {
+            var movie = await context.Movies.FirstOrDefaultAsync(x => x.Id == id);
+
+            if(movie == null) {
+                return Ok("There is no movie exist");
+            }
+
+            context.Remove(movie);
+            await context.SaveChangesAsync();
+            await fileStorageService.DeleteFile(containerName, movie.Poster);   
+            return NoContent();
+
+
+            }
+
 
         }
 }
