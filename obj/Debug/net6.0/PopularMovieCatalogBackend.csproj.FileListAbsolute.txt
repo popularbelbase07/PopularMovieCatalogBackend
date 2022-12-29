@@ -97,14 +97,6 @@ C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\refint\P
 C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.pdb
 C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.genruntimeconfig.cache
 C:\Users\popul\source\repos\PopularMovieCatalogBackend\obj\Debug\net6.0\ref\PopularMovieCatalogBackend.dll
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.csproj.AssemblyReference.cache
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.AssemblyInfoInputs.cache
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.AssemblyInfo.cs
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.csproj.CoreCompileInputs.cache
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\appsettings.json
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\package-lock.json
@@ -182,6 +174,14 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.csproj.AssemblyReference.cache
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.AssemblyInfoInputs.cache
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.AssemblyInfo.cs
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.csproj.CoreCompileInputs.cache
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\PopularMovieCatalogBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets\msbuild.PopularMovieCatalogBackend.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets\msbuild.build.PopularMovieCatalogBackend.props
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.PopularMovieCatalogBackend.props
