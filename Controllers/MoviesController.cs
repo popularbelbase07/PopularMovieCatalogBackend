@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PopularMovieCatalogBackend.DTOs.Actor;
+using PopularMovieCatalogBackend.DTOs.FilterMovies;
 using PopularMovieCatalogBackend.DTOs.Genre;
 using PopularMovieCatalogBackend.DTOs.Movie;
 using PopularMovieCatalogBackend.DTOs.MovieTheater;
 using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
+using PopularMovieCatalogBackend.Helpers.Pagination;
 using PopularMovieCatalogBackend.Model.Movies;
 
 namespace PopularMovieCatalogBackend.Controllers
@@ -168,6 +170,8 @@ namespace PopularMovieCatalogBackend.Controllers
             return NoContent(); 
 
         }
+
+
        
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
@@ -185,6 +189,34 @@ namespace PopularMovieCatalogBackend.Controllers
 
 
             }
+
+        // Filter the movies and filter by title, inTheaters, upcommingRelease, genreId
+        [HttpGet("filter")]
+        public async Task<ActionResult<List<MovieDTO>>> FilterMovies([FromQuery] FilterMoviesDTO filterMoviesDTO)
+        {
+            var movieQueryable = context.Movies.AsQueryable();
+
+            if (!string.IsNullOrEmpty(filterMoviesDTO.Title)){
+                movieQueryable = movieQueryable.Where(x => x.Title.Contains(filterMoviesDTO.Title));    
+            }
+            if (filterMoviesDTO.InTheaters)
+            {
+                movieQueryable = movieQueryable.Where(x => x.InTheaters);
+            }
+            if (filterMoviesDTO.UpcommingReleases)
+            {
+                var today = DateTime.Today; 
+                movieQueryable = movieQueryable.Where(x => x.ReleaseDate > today);  
+            }
+            if(filterMoviesDTO.GenreId != 0)
+            {
+                movieQueryable = movieQueryable.Where(x => x.MoviesGenres.Select(y => y.GenreId)
+                .Contains(filterMoviesDTO.GenreId));
+            }
+            await HttpContext.InsertParametsrPaginationInHeader(movieQueryable);
+            var movies = await movieQueryable.OrderBy(x => x.Title).Paginate(filterMoviesDTO.PaginationDTO).ToListAsync();
+            return mapper.Map<List<MovieDTO>>(movies);
+        }
 
 
         }
