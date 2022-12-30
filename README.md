@@ -25,7 +25,13 @@ Add-Migration MovieAndFriends
 update-database
 
 * Model Binding 
-NewtonSoftJson for serialization.
+
+	NewtonSoftJson for serialization.
+
+* Working with Authentication and Authorization install 
+
+	Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
 
  
 

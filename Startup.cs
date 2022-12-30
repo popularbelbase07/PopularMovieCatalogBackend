@@ -89,12 +89,11 @@ namespace PopularMovieCatalogBackend
                         ValidateAudience = false,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new AsymmetricSecurityKey(
-                            Encoding.UTF8.GetBytes(Configuration["JwtKey"])),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtKey"])),                      
                         ClockSkew = TimeSpan.Zero
                     };
                 });
-
+          
 
             /*
             // Dependencis for LocalStorage Services
