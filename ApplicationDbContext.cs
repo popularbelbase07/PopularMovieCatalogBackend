@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using PopularMovieCatalogBackend.Entities.Movies;
 using PopularMovieCatalogBackend.Model;
 using PopularMovieCatalogBackend.Model.Movies;
@@ -7,8 +8,10 @@ using System.Diagnostics.CodeAnalysis;
 namespace PopularMovieCatalogBackend
 {
     // This is a central configuration class which contains Entity Framework for the application.
-
-    public class ApplicationDbContext : DbContext
+    // public class ApplicationDbContext : DbContext
+    // With identity we can authenticate and authorize the user to the
+    // different resources and build json web token that helps to user can easily authenticate
+    public class ApplicationDbContext :IdentityDbContext
     {
         public ApplicationDbContext( [NotNullAttribute] DbContextOptions options) : base(options)
         {

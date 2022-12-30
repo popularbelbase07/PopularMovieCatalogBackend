@@ -113,6 +113,7 @@ C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Storage.Blobs.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Azure.Storage.Common.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Humanizer.dll
+C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\popul\source\Dissertation Project\PopularMovieCatalogBackend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll

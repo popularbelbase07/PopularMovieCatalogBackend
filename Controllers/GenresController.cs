@@ -59,6 +59,15 @@ namespace PopularMovieCatalogBackend.Controllers
 
         }
 
+        // Filter the movies and filter by Genres
+        // GET: api/<GenresController>
+        [HttpGet("allGenres")]
+        public async Task<ActionResult<IEnumerable<GenreDTO>>> Get()
+        { var genres = await context.Genres.OrderBy(x => x.Name).ToListAsync();
+            return mapper.Map<List<GenreDTO>>(genres);
+        }
+
+
         // GET api/<GenresController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<GenreDTO>> Get(int id)

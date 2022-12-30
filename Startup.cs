@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using NetTopologySuite;
 using NetTopologySuite.Geometries;
 using PopularMovieCatalogBackend.APIBehavior;
@@ -7,7 +10,7 @@ using PopularMovieCatalogBackend.Filter;
 using PopularMovieCatalogBackend.Filters;
 using PopularMovieCatalogBackend.Helpers;
 using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
-
+using System.Text;
 
 namespace PopularMovieCatalogBackend
 {
@@ -38,9 +41,6 @@ namespace PopularMovieCatalogBackend
 
             }).ConfigureApiBehaviorOptions(BadRequestBehavior.Parse);
 
-            //Jwt Authentication
-           // services.AddAuthentication(JwtBearerDefaults.AuthenticateScheme).AddJwtBearer();
-
             // Action filter is added
             services.AddTransient<MyExceptionFilter>();
 
@@ -50,7 +50,7 @@ namespace PopularMovieCatalogBackend
             {
                 c.SwaggerDoc("v1", new() { Title = " PopularMovieCatalogBackend", Version = "v1" });
             });
-
+          
             // Adding Cors policy to the system
             services.AddCors(options =>
             {
@@ -74,10 +74,33 @@ namespace PopularMovieCatalogBackend
 
             // Dependencis for AzureStorage Services
             services.AddScoped<IFileStorageServices, AzureStorageServices>();
+
+            // For authentication and authoraization
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+            //Jwt Authentication
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer( options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new AsymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(Configuration["JwtKey"])),
+                        ClockSkew = TimeSpan.Zero
+                    };
+                });
+
+
             /*
             // Dependencis for LocalStorage Services
             services.AddScoped<IFileStorageServices, ImageStorageServices>();
             services.AddHttpContextAccessor();
+
             */
         }
 
