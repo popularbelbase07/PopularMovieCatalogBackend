@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using PopularMovieCatalogBackend.DTOs.Auth;
@@ -9,7 +10,7 @@ using System.Text;
 namespace PopularMovieCatalogBackend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/accounts")]
     public class AccountsControllers : ControllerBase
     {
         private readonly UserManager<IdentityUser> userManager;
@@ -24,7 +25,7 @@ namespace PopularMovieCatalogBackend.Controllers
             this.configuration = configuration;
         }
 
-        [HttpGet("create")]
+        [HttpPost("create")]
         public async Task<ActionResult<AuthenticationResponse>> CreateUser([FromBody] UserCredentials userCredentials)
         {
             var user = new IdentityUser { UserName = userCredentials.Email, Email = userCredentials.Email };
@@ -44,7 +45,7 @@ namespace PopularMovieCatalogBackend.Controllers
         }
 
 
-        [HttpGet("login")]
+        [HttpPost("login")]
         public async Task<ActionResult<AuthenticationResponse>> Login([FromBody] UserCredentials userCredentials)
         {
             var result = await signInManager.PasswordSignInAsync(userCredentials.Email,
@@ -54,7 +55,7 @@ namespace PopularMovieCatalogBackend.Controllers
                 return BuildTokenForAuthentication(userCredentials);
             }
             else
-            {
+            { 
                 return BadRequest("Incorrect Login !!!!!!");
             }
 
@@ -62,7 +63,8 @@ namespace PopularMovieCatalogBackend.Controllers
 
 
             private AuthenticationResponse BuildTokenForAuthentication(UserCredentials userCredentials)
-        {// json web token contains claims.IT composed by 3 parts => header, signature and payload data(contains claim)
+            {
+            // json web token contains claims.IT composed by 3 parts => header, signature and payload data(contains claim)
             // use minimum necessory identification
             var claims = new List<Claim>() {
                 new Claim ("email", userCredentials.Email)
