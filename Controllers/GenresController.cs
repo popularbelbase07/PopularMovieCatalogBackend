@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PopularMovieCatalogBackend.DTOs.Genre;
@@ -11,6 +13,7 @@ namespace PopularMovieCatalogBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "IsAdmin")]
     public class GenresController : ControllerBase
     {
         private readonly ILogger<GenresController> logger;
@@ -62,6 +65,7 @@ namespace PopularMovieCatalogBackend.Controllers
         // Filter the movies and filter by Genres
         // GET: api/<GenresController>
         [HttpGet("allGenres")]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<GenreDTO>>> Get()
         { var genres = await context.Genres.OrderBy(x => x.Name).ToListAsync();
             return mapper.Map<List<GenreDTO>>(genres);

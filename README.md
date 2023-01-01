@@ -32,6 +32,14 @@ update-database
 
 	Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
+* Migrating The UserAuthentication Tables
+
+	Add-Migration IdentityTables
+
+* Migrating The Rating Tables
+	Add-Migration RatingTable
+	update-database
+
 
  
 

@@ -25,5 +25,10 @@ namespace PopularMovieCatalogBackend.DTOs.Movie
         public List<MovieTheaterDTO> MovieTheaters { get; set; }
 
         public List<ActorsMovieDTO> Actors { get; set; }
+
+        //for rating
+        public double AverageVote { get; set; }
+
+        public int UserVote { get; set; }
     }
 }

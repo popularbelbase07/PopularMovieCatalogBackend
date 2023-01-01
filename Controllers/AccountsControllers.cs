@@ -28,7 +28,7 @@ namespace PopularMovieCatalogBackend.Controllers
         [HttpPost("create")]
         public async Task<ActionResult<AuthenticationResponse>> CreateUser([FromBody] UserCredentials userCredentials)
         {
-            var user = new IdentityUser { UserName = userCredentials.Email, Email = userCredentials.Email };
+            var user = new IdentityUser {UserName = userCredentials.Email, Email = userCredentials.Email };
             var result = await userManager.CreateAsync(user, userCredentials.Password);
 
             if (result.Succeeded)
@@ -64,7 +64,7 @@ namespace PopularMovieCatalogBackend.Controllers
 
             private AuthenticationResponse BuildTokenForAuthentication(UserCredentials userCredentials)
             {
-            // json web token contains claims.IT composed by 3 parts => header, signature and payload data(contains claim)
+            // json web token contains claims 3 parts => header, signature and payload data(contains claim)
             // use minimum necessory identification
             var claims = new List<Claim>() {
                 new Claim ("email", userCredentials.Email)

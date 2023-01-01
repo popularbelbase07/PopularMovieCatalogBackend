@@ -10,6 +10,7 @@ using PopularMovieCatalogBackend.Filter;
 using PopularMovieCatalogBackend.Filters;
 using PopularMovieCatalogBackend.Helpers;
 using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
+using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
 namespace PopularMovieCatalogBackend
@@ -20,6 +21,8 @@ namespace PopularMovieCatalogBackend
 
         public Startup(IConfiguration configuration)
         {
+            // Clear the ClaimType.email long string
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             Configuration = configuration;
         }
 
@@ -93,7 +96,13 @@ namespace PopularMovieCatalogBackend
                         ClockSkew = TimeSpan.Zero
                     };
                 });
-          
+
+            //Claim based Authorization Admin or user
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("IsAdmin", policy => policy.RequireClaim("role", "admin"));
+            });
+
 
             /*
             // Dependencis for LocalStorage Services
