@@ -49,10 +49,7 @@ namespace PopularMovieCatalogBackend
 
             // Add services to the container.
             services.AddControllers();
-            services.AddSwaggerGen( c =>
-            {
-                c.SwaggerDoc("v1", new() { Title = " PopularMovieCatalogBackend", Version = "v1" });
-            });
+           
           
             // Adding Cors policy to the system
             services.AddCors(options =>
@@ -102,6 +99,7 @@ namespace PopularMovieCatalogBackend
             {
                 options.AddPolicy("IsAdmin", policy => policy.RequireClaim("role", "admin"));
             });
+           
 
 
             /*
@@ -110,6 +108,11 @@ namespace PopularMovieCatalogBackend
             services.AddHttpContextAccessor();
 
             */
+            // Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new() { Title = " PopularMovieCatalogBackend", Version = "v1" });
+            });
         }
 
         public void Configure(IApplicationBuilder app,  IWebHostEnvironment env, ILogger<Startup> logger)

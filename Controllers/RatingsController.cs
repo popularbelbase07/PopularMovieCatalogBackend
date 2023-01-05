@@ -22,22 +22,14 @@ namespace PopularMovieCatalogBackend.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<ActionResult> Get()
-        {
-            throw new NotImplementedException();
-        }
-
-
-            
-        [HttpPost]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+                  
+        [HttpPost("ratings")]
+       [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult> Post([FromBody] RatingDTO ratingDTO)
         {
             //ClaimTypes.Email
             // the claims come from accountsControllers and using this jwt is the user is not able to lie.
             var email = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "email").Value;
-
             var user = await userManager.FindByEmailAsync(email);
             var userId = user.Id;
 
@@ -49,8 +41,8 @@ namespace PopularMovieCatalogBackend.Controllers
             {
                 var rating = new Rating();
                 rating.MovieId = ratingDTO.MovieId;
-                rating.UserId = userId;
                 rating.Rate = ratingDTO.Rating;
+                rating.UserId = userId;               
                 context.Add(rating);
             }
             else

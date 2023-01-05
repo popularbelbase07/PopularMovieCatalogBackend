@@ -90,7 +90,6 @@ namespace PopularMovieCatalogBackend.Controllers
             }
             if (HttpContext.User.Identity.IsAuthenticated)
             {
-                // Error here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!???????????????
                 var email = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "email").Value;
                 var user = await userManager.FindByEmailAsync(email);
                 var userId = user.Id;
@@ -230,7 +229,6 @@ namespace PopularMovieCatalogBackend.Controllers
         }
 
         // Filter the movies and filter by title, inTheaters, upcommingRelease, genreId
-
         [HttpGet("filter")]
         [AllowAnonymous]
         public async Task<ActionResult<List<MovieDTO>>> FilterMovies([FromQuery] FilterMoviesDTO filterMoviesDTO)

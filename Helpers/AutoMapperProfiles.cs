@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using NetTopologySuite.Geometries;
 using PopularMovieCatalogBackend.DTOs.Actor;
+using PopularMovieCatalogBackend.DTOs.Auth;
 using PopularMovieCatalogBackend.DTOs.Genre;
 using PopularMovieCatalogBackend.DTOs.Movie;
 using PopularMovieCatalogBackend.DTOs.MovieTheater;
@@ -46,6 +48,9 @@ namespace PopularMovieCatalogBackend.Helpers
                 .ForMember(x => x.Genres, options => options.MapFrom(MapSpecificMoviesGenres))
                 .ForMember(x => x.MovieTheaters, options => options.MapFrom(MapSpecificMovieTheatersMovies))
                 .ForMember(x => x.Actors, options => options.MapFrom(MapSpecificMoviesActors));
+
+            //Create a mapper for claim based login from account Controller(listUsers)
+            CreateMap<IdentityUser, UserDTO>();
 
         }
         // All three following private methods are for CREATE MOVIE

@@ -54,7 +54,13 @@ namespace PopularMovieCatalogBackend.Controllers
         public async Task<ActionResult> Post([FromForm] ActorCreationDTO actorCreationDTO)
         {
             var actor = mapper.Map<Actor>(actorCreationDTO);
-            if (actorCreationDTO != null)
+
+            if (actorCreationDTO == null)
+            {
+                NoContent ();   
+            }
+
+            else if (actorCreationDTO != null)
             {
                 actor.Picture = await fileStorageService.SaveFiles(containerName, actorCreationDTO.Picture);
             }

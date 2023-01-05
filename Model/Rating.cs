@@ -18,6 +18,6 @@ namespace PopularMovieCatalogBackend.Model
 
         public string UserId { get; set; }
 
-        public IdentityUser? User { get; set; }  
+        public IdentityUser User { get; set; }  
     }
 }

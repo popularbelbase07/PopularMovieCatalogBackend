@@ -70,9 +70,7 @@ namespace PopularMovieCatalogBackend.Controllers
         { var genres = await context.Genres.OrderBy(x => x.Name).ToListAsync();
             return mapper.Map<List<GenreDTO>>(genres);
         }
-
-
-        // GET api/<GenresController>/5
+                // GET api/<GenresController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<GenreDTO>> Get(int id)
         {

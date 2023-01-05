@@ -12,7 +12,5 @@ namespace PopularMovieCatalogBackend.Model
         public string Name { get; set; }
         //For location install the SQLSERVER/NETTOPOLOGYSUITE
         public Point Location { get; set; }
-
-
     }
 }

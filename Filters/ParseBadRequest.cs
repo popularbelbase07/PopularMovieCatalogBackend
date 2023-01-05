@@ -30,7 +30,7 @@ namespace PopularMovieCatalogBackend.Filters
                 {
                     response.Add(badRequestObjectResult.Value.ToString());
                 }
-
+                // Display the array of errors that comming from the IdentityError
                 else if (badRequestObjectResult.Value is IEnumerable<IdentityError> errors)
                 {
                     foreach(var error in errors)
