@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "identityapp1": {
+      "ignored": "true",
+      "type": "identityapp"
+    },
+    "storage1": {
+      "ignored": "true",
+      "type": "storage"
+    }
+  }
+}
