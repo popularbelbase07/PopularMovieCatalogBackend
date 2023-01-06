@@ -4,10 +4,29 @@
       "restored": true,
       "restoreTime": "2023-01-06T00:43:45.3808086Z"
     },
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2023-01-06T01:21:26.2649478Z"
+    },
     "storage1": {
       "restored": true,
       "restoreTime": "2023-01-06T00:43:51.9846699Z"
+    },
+    "appInsights1": {
+      "restored": true,
+      "restoreTime": "2023-01-06T01:21:33.0343554Z"
     }
   },
-  "parameters": {}
+  "parameters": {
+    "appInsights1.resourceGroupName": {
+      "Name": "appInsights1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "PopularMovieAPI"
+    },
+    "appInsights1.subscriptionId": {
+      "Name": "appInsights1.subscriptionId",
+      "Type": "subscription",
+      "Value": "e6afca4c-dbef-43c5-993f-246630dd4ef1"
+    }
+  }
 }

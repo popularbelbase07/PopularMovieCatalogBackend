@@ -12,6 +12,7 @@ using PopularMovieCatalogBackend.Helpers;
 using PopularMovieCatalogBackend.Helpers.ImageInAzureStorage;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace PopularMovieCatalogBackend
 {
@@ -113,6 +114,7 @@ namespace PopularMovieCatalogBackend
             {
                 c.SwaggerDoc("v1", new() { Title = " PopularMovieCatalogBackend", Version = "v1" });
             });
+            services.AddApplicationInsightsTelemetry(Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
         }
 
         public void Configure(IApplicationBuilder app,  IWebHostEnvironment env, ILogger<Startup> logger)

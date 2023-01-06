@@ -27,6 +27,6 @@ jobs:
       - name: Publish
         run: dotnet publish ./PopularMovieCatalogBackend.sln --configuration Release --no-build
         
-      - name: Deployment
-        uses: azure/webapps-deploy@v2
+      
+       
         
