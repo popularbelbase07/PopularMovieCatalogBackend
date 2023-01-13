@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers"
   ],
-  "SelectedNode": "\\PopularMovieCatalogBackend.sln",
+  "SelectedNode": "\\Controllers\\MoviesController.cs",
   "PreviewInSolutionExplorer": false
 }

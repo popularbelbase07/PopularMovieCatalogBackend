@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAf34MFGpSdUulTiYsHbeGowAAAAACAAAAAAAQZgAAAAEAACAAAADgYZrz7jl4Bwes5MQmH62NB9ZLyZVK7qGvCZbofhbBYgAAAAAOgAAAAAIAACAAAABNxkN5V2xSHl/EycvLI8K/LE6sBcWMc6q7zeVbcPuxxYAAAACsl6FQt31xGLn2lFRQ/J/teEZP8XEfiW4OyTvxql0bmdQ/9iV05V3y+46vBH3DJZUgvl6beTsmkN4WR4pLsnFhz2fZuzqLjuDV3k4GtbSj2iuALTWofzwKSKhl2SAdiB6MrQFeNoxWX9DCXlvo+dONKVwgtV7Iz1NvpKdoTNWM4EAAAAAZnjac7TbsVwvkhlrQwtYRWatJHCxIysWUj6oMKDNOdNRkZ45Hc29XMyEH+aYqMbTiG845XD8zfH7YFFF3o7k9</EncryptedPassword>
+    <History>True|2023-01-11T16:05:08.2597502Z;True|2023-01-06T02:24:06.7739538+01:00;True|2023-01-06T02:16:20.2241019+01:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="PopularMovieCatalogBackend.ApplicationDbContext">
+      <Value>Data Source=tcp:popularmoviecatalogbackenddbserver07.database.windows.net,1433%3bInitial Catalog=PopularMovieCatalogBackend_db%3bUser Id=Popularbelbase07%40popularmoviecatalogbackenddbserver07%3bPassword=Famous%4012345</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

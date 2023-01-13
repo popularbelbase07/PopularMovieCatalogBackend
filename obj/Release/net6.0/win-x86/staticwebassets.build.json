@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "3A+mexGZ1ddvfOb+IIL1h0Izxxp+Ip5ql0qD3VsYpPQ=",
+  "Source": "PopularMovieCatalogBackend",
+  "BasePath": "_content/PopularMovieCatalogBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PopularMovieCatalogBackend\\wwwroot",
+      "Source": "PopularMovieCatalogBackend",
+      "ContentRoot": "C:\\Users\\popul\\source\\Dissertation Project\\PopularMovieCatalogBackend\\wwwroot\\",
+      "BasePath": "_content/PopularMovieCatalogBackend",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
